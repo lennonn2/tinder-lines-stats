@@ -1,0 +1,25 @@
+tr {
+  display: flex;
+}
+
+.idColumn {
+  max-width: 110px;
+  min-width: 75px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-basis: 120px;
+  flex-grow: 1;
+  max-width: 120px;
+  flex-shrink: 1;
+  min-width: 75px;
+}
+
+.dateColumn {
+  flex-basis: 175px;
+}
+
+.copiesColumn, .viewsColumn {
+  width: 75px;
+  text-align: center;
+}

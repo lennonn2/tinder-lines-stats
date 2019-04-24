@@ -3,5 +3,11 @@
   left: 0; top: 0; 
   right: 0; bottom: 0;
   overflow: auto;
-  /* display: block; */
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  position: relative;
 }

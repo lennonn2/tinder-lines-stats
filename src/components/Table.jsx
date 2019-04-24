@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Row from './Row';
+import TableHead from './TableHead';
 import './Table.css';
 
 const mapState = ({lines}) => {
@@ -13,16 +14,8 @@ const mapState = ({lines}) => {
 const Table = ({ lines }) => {
   return (
     <div className='mytable'>
-      <table className='table' style={{marginBottom: 0}}>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Created At</th>
-            <th>Copies</th>
-            <th>Views</th>
-            <th>Categories</th>
-          </tr>
-        </thead>
+      <table className='table scroll' style={{marginBottom: 0}}>
+        <TableHead />
         <tbody>
           {lines.map(line =>
             <Row key={line.lineId} line={line}/>

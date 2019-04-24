@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import './Row.css';
 import { updateSelected } from '../actions';
+import {dateToString} from '../utils/date';
 
 const mapDispatch = (dispatch, ownProps) => {
   return {
@@ -9,15 +11,19 @@ const mapDispatch = (dispatch, ownProps) => {
   }
 }
 
+const categories = cats => {
+  const str = cats.reduce((str, cat) => `${cat}, ${str}`, '');
+  return str.slice(0, str.length-2);
+}
+
 const Row = ({line, updateSelected}) => {
-  // const onClick = () => updateSelected(line.lineId);
   return (
     <tr onClick={updateSelected}>
-      <td>{line.lineId}</td>
-      <td>{line.createdAt}</td>
-      <td>{line.copies}</td>
-      <td>{line.numViews}</td>
-      <td>{line.categories.reduce((str, cat) => `${str}, ${cat}`, '')}</td>
+      <td className='idColumn'>{line.lineId}</td>
+      <td className='dateColumn'>{dateToString(line.createdAt)}</td>
+      <td className='copiesColumn'>{line.copies}</td>
+      <td className='viewsColumn'>{line.numViews}</td>
+      <td>{categories(line.categories)}</td>
     </tr>
   );
 };

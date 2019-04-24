@@ -1,0 +1,34 @@
+.tableHead {
+  position: sticky;
+  background-color: white;
+  display: flex;
+  flex: 1 1 70%;
+  border-bottom: 2px solid black;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.tableHead div {
+  font-weight: bold;
+  padding: 12px;
+}
+
+.idColumnHead {
+  max-width: 110px;
+  min-width: 75px;
+  flex-basis: 120px;
+  flex-grow: 1;
+  max-width: 120px;
+  flex-shrink: 1;
+  min-width: 75px;
+}
+
+.dateColumnHead {
+  flex-basis: 175px;
+}
+
+.copiesColumnHead, .viewsColumnHead {
+  width: 75px;
+  text-align: center;
+}
